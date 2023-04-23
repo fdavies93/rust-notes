@@ -39,3 +39,26 @@ Strings have `trim()` and `parse()` methods. User input has a terminal `\n`.
 `match` statements work on the result of a function and let you create arms with different outcomes
 
 ### 3: Common Programming Concepts
+
+#### Variables and Mutability
+
+`const` can be used in the global scope but `let` can only be used in a function.
+
+Can reuse a variable name if you shadow it. This also lets you change the type, which you can't do with a mutable.
+
+```rust
+// this succeeds
+let spaces = "   ";
+let spaces = spaces.len();
+```
+
+```rust
+// this fails
+let mut spaces = "   ";
+spaces = spaces.len();
+```
+
+#### Data Types
+
+In this example, we need to tell the compiler the type of guess explicitly.
+`let guess: u32 = "42".parse().expect("Not a number!");`
