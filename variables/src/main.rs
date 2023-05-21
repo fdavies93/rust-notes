@@ -18,5 +18,6 @@ fn main() {
         }
         println!("The value of x is: {x}");
     }
+    
     println!("The value of x is: {x}");
 }
