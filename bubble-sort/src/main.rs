@@ -1,4 +1,4 @@
-fn bubble_sort(arr: &mut Vec<i32>) -> Vec<i32> {
+fn bubble_sort(arr: Vec<i32>) -> Vec<i32> {
     let mut output = arr.clone();
 
     let mut temp: i32;
@@ -16,10 +16,9 @@ fn bubble_sort(arr: &mut Vec<i32>) -> Vec<i32> {
 }
 
 fn main() {
-    let mut arr = vec![9,4,2,7,1];
-    // let mut arr: [i32; 5] = [9, 4, 2, 7, 1];
+    let arr = vec![9,4,2,7,1];
 
-    let sorted = bubble_sort(&mut arr);
+    let sorted = bubble_sort(arr);
 
     println!("{:?}", sorted)
 }
