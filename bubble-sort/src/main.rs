@@ -1,16 +1,25 @@
-fn main() {
-    let mut arr: [i32; 5] = [9, 4, 2, 7, 1];
+fn bubble_sort(arr: &mut Vec<i32>) -> Vec<i32> {
+    let mut output = arr.clone();
+
     let mut temp: i32;
 
-    for i1 in 0..arr.len() {
-        for i2 in i1+1..arr.len() {
-            if arr[i1] > arr[i2] {
-                temp = arr[i1];
-                arr[i1] = arr[i2];
-                arr[i2] = temp;    
+    for i1 in 0..output.len() {
+        for i2 in i1+1..output.len() {
+            if output[i1] > output[i2] {
+                temp = output[i1];
+                output[i1] = output[i2];
+                output[i2] = temp;    
             }
         }
     }
+    return output;
+}
 
-    println!("{:?}", arr)
+fn main() {
+    let mut arr = vec![9,4,2,7,1];
+    // let mut arr: [i32; 5] = [9, 4, 2, 7, 1];
+
+    let sorted = bubble_sort(&mut arr);
+
+    println!("{:?}", sorted)
 }
